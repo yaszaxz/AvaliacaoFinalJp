@@ -1,9 +1,9 @@
 const ServiceFilmes = require('../services/filmes')
 
 class ControllerFilmes{
-    async GetFilmes(req,res){
+    async ExibirFilmes(req,res){
         try{
-            const filmes = await ServiceFilmes.GetFilmes()
+            const filmes = await ServiceFilmes.ExibirFilmes()
             res.send({msg: filmes})
         }catch (error){
             res.status(500).send({ msg: error.message })
@@ -20,14 +20,14 @@ class ControllerFilmes{
         }
     }
 
-    async AtualizarFilme(req,res){
+    async AlterarFilme(req,res){
         try{
             const id = req.params.id
             const titulo = req.body.titulo
             const faixaEtaria = req.body.faixaEtaria
             const diretor = req.body.diretor
 
-            const filme = await ServiceFilmes.AtualizarFilme(id, titulo, faixaEtaria, diretor)
+            const filme = await ServiceFilmes.AlterarFilme(id, titulo, faixaEtaria, diretor)
             res.send({msg: filme})
         }catch (error) {
             res.status(500).send({ msg: error.message })

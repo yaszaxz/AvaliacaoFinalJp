@@ -1,6 +1,4 @@
-const database = require('../config/database')
-const bcrypt = require("bcrypt")
-const ModelFilmes = require('../models/models')
+const ModelFilmes = require('../models/filmes')
 
 class ServiceFilmes{
     async GetFilmeById(id){
