@@ -16,7 +16,7 @@ class ServiceCliente{
         return ModelCliente.create({nome, email, senha})
     }
 
-    async AlterarCliente(id, email, senha){
+    async AlterarCliente(id, nome, email, senha){
         if(!id){
             throw new Error("Favor insira um id")
         }

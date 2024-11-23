@@ -18,7 +18,7 @@ class ServiceFilmes{
         return ModelFilmes.create({titulo, faixaEtaria, diretor})
     }
 
-    async AlterarFilme(id, faixaEtaria, diretor){
+    async AlterarFilme(id, titulo, faixaEtaria, diretor){
         if(!id){
             throw new Error("Favor insira um id")
         }

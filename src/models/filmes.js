@@ -1,26 +1,25 @@
 const database = require('../config/database')
 
-class ModelCliente 
+class ModelFilmes 
 {
     constructor()
     {
-        this.model = database.db.define('cliente', {
+        this.model = database.db.define('filmes', {
             id: 
             {
                 type: database.db.Sequelize.INTEGER,
                 primaryKey: true,
                 autoIncrement:true
             },
-            nome:
+            titulo:
             {
                 type: database.db.Sequelize.STRING
             },
-            email:
+            faixaEtaria:
             {
                 type: database.db.Sequelize.STRING,
-                unique: true
             },
-            senha:
+            diretor:
             {
                 type: database.db.Sequelize.STRING
             }
@@ -28,5 +27,4 @@ class ModelCliente
         })
     }
 }
-
-module.exports = new ModelCliente().model
+module.exports = new ModelFilmes().model
